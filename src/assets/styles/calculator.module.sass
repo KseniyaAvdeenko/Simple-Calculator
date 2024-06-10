@@ -5,7 +5,7 @@
   box-shadow: 0 0 20px 0 rgba(30, 30, 30, 0.25)
   width: 37.5%
   border-radius: 30px
-  padding: 30px
+  padding: 20px
   @extend .dFlex
   @extend .flexColumn
   @extend .flexAiCenter
@@ -16,7 +16,7 @@
 
 @media all and (max-device-width: 1680px)
   .calculator
-    width: 32%
+    width: 30%
 
 @media all and (max-device-width: 1440px)
   .calculator
@@ -70,11 +70,8 @@
 .calcSettings
   @extend .dFlex
   @extend .flexJcEnd
-  margin-bottom: 30px
+  margin-bottom: 20px
 
-@media all and (max-device-width: 1024px)
-  .calcSettings
-    margin-bottom: 20px
 
 .darkImageWrapper,
 .lightImageWrapper
@@ -89,12 +86,16 @@
   border-style: solid
   border-radius: 20px
   height: 250px
-  margin-bottom: 30px
+  margin-bottom: 20px
   @extend .widthFull
   @extend .dFlex
   @extend .flexColumn
   padding: 10px
   @extend .flexJcSpaceBtw
+
+@media all and (max-device-width: 1680px)
+  .display
+    height: 230px
 
 @media all and (max-device-width: 1024px)
   .display
@@ -120,11 +121,19 @@
   grid-template-rows: repeat(5, 90px)
   row-gap: 15px
   column-gap: 40px
+  @extend .flexJcCenter
+
+@media all and (max-device-width: 1680px)
+  .calcButtons
+    grid-template-columns: repeat(4, 75px)
+    grid-template-rows: repeat(5, 75px)
+    row-gap: 10px
+    column-gap: 30px
 
 @media all and (max-device-width: 1280px)
   .calcButtons
-    grid-template-columns: repeat(4, 70px)
-    grid-template-rows: repeat(5, 70px)
+    grid-template-columns: repeat(4, 60px)
+    grid-template-rows: repeat(5, 60px)
     row-gap: 10px
     column-gap: 30px
 
@@ -145,10 +154,17 @@
   @extend .flexAiCenter
   @extend .flexJcCenter
 
+
+@media all and (max-device-width: 1680px)
+  .calcButton
+    width: 75px
+    height: 75px
+    font-size: 30px
+
 @media all and (max-device-width: 1280px)
   .calcButton
-    width: 70px
-    height: 70px
+    width: 60px
+    height: 60px
     font-size: 30px
 
 @media all and (max-device-width: 1024px)
