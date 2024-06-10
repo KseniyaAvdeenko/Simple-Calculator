@@ -128,7 +128,7 @@ function App() {
         }
     }
 
-    console.log(document.body.clientWidth)
+
     const doCalculations = (value) => {
         let nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
         let calcSigns = ['+', '-', '*', '/', '%',]
