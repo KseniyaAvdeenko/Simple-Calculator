@@ -1,0 +1,28 @@
+@import "assets/styles/vars"
+@import "assets/styles/common.module"
+@import "assets/styles/calculator.module"
+
+.appWrapper
+  font-size: 18px
+  @extend .dFlex
+  @extend .flexAiCenter
+  @extend .flexJcCenter
+  width: 100%
+  height: 100%
+
+
+.AppWrapperLight
+  background-color: $textWhite
+  @extend .appWrapper
+
+.AppWrapperDark
+  background-color: $bgDark
+  @extend .appWrapper
+
+.wrapper
+  font-size: 18px
+  @extend .widthFull
+  @extend .heightFull
+  @extend .dFlex
+  @extend .flexAiCenter
+  @extend .flexJcCenter

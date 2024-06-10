@@ -1,0 +1,180 @@
+@import './vars'
+@import "./common.module"
+
+.calculator
+  box-shadow: 0 0 20px 0 rgba(30, 30, 30, 0.25)
+  width: 37.5%
+  border-radius: 30px
+  padding: 30px
+  @extend .dFlex
+  @extend .flexColumn
+  @extend .flexAiCenter
+
+@media all and (max-device-width: 1920px)
+  .calculator
+    width: 22.5%
+
+@media all and (max-device-width: 1680px)
+  .calculator
+    width: 32%
+
+@media all and (max-device-width: 1440px)
+  .calculator
+    width: 30%
+
+@media all and (max-device-width: 1370px)
+  .calculator
+    width: 39.5%
+
+@media all and (max-device-width: 1280px)
+  .calculator
+    width: 34.5%
+
+@media all and (max-device-width: 1024px)
+  .calculator
+    width: 34.5%
+
+@media all and (max-device-width: 768px)
+  .calculator
+    width: 45.5%
+
+@media all and (max-device-width: 744px)
+  .calculator
+    width: 59.5%
+
+@media all and (max-device-width: 540px)
+  .calculator
+    width: 65.5%
+
+@media all and (max-device-width: 430px)
+  .calculator
+    width: 81.5%
+
+@media all and (max-device-width: 390px)
+  .calculator
+    width: 90.5%
+
+@media all and (max-device-width: 375px)
+  .calculator
+    width: 95.5%
+
+
+.calcLight
+  background-color: $textWhite
+  @extend .calculator
+
+.calcDark
+  background-color: $primary
+  @extend .calculator
+
+.calcSettings
+  @extend .dFlex
+  @extend .flexJcEnd
+  margin-bottom: 30px
+
+@media all and (max-device-width: 1024px)
+  .calcSettings
+    margin-bottom: 20px
+
+.darkImageWrapper,
+.lightImageWrapper
+  padding: 5px
+  height: 35px
+  width: 35px
+  border-radius: 50%
+
+
+.display
+  border-width: 1px
+  border-style: solid
+  border-radius: 20px
+  height: 250px
+  margin-bottom: 30px
+  @extend .widthFull
+  @extend .dFlex
+  @extend .flexColumn
+  padding: 10px
+  @extend .flexJcSpaceBtw
+
+@media all and (max-device-width: 1024px)
+  .display
+    height: 220px
+
+
+.calculations
+  @extend .widthFull
+  @extend .dFlex
+  @extend .flexJcEnd
+
+.currentCalculations
+  @extend .widthFull
+  @extend .dFlex
+  @extend .flexJcEnd
+  font-size: 40px
+
+
+.calcButtons
+  @extend .widthFull
+  display: grid
+  grid-template-columns: repeat(4, 90px)
+  grid-template-rows: repeat(5, 90px)
+  row-gap: 15px
+  column-gap: 40px
+
+@media all and (max-device-width: 1280px)
+  .calcButtons
+    grid-template-columns: repeat(4, 70px)
+    grid-template-rows: repeat(5, 70px)
+    row-gap: 10px
+    column-gap: 30px
+
+@media all and (max-device-width: 1024px)
+  .calcButtons
+    grid-template-columns: repeat(4, 50px)
+    grid-template-rows: repeat(5, 50px)
+    row-gap: 10px
+    column-gap: 30px
+
+.calcButton
+  border-radius: 50%
+  width: 90px
+  height: 90px
+  font-size: 40px
+  border: none
+  @extend .dFlex
+  @extend .flexAiCenter
+  @extend .flexJcCenter
+
+@media all and (max-device-width: 1280px)
+  .calcButton
+    width: 70px
+    height: 70px
+    font-size: 30px
+
+@media all and (max-device-width: 1024px)
+  .calcButton
+    width: 50px
+    height: 50px
+    font-size: 24px
+
+.calcButtonLight
+  @extend .calcButton
+  color: $textDark
+  background-color: transparent
+
+.calcButtonDark
+  @extend .calcButton
+  color: $textWhite
+  background-color: transparent
+
+.functionalButtonDark
+  @extend .calcButton
+  background-color: $primaryLight
+  color: $accent
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.15)
+
+.functionalButtonLight
+  @extend .calcButton
+  background-color: $primary
+  color: $textWhite
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.15)
