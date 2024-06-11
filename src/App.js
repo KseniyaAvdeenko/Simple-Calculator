@@ -85,8 +85,8 @@ function App() {
                 return +operand1 * +operand1
             } else if (sign === '/') {
                 return +operand1 / +operand1
-            }else if (sign === '%' ) {
-                return +operand1/100
+            } else if (sign === '%') {
+                return +operand1 / 100
             }
         }
     }
@@ -104,26 +104,26 @@ function App() {
     }
 
     function doPositiveOrNegative() {
-        if (calculations.split(' ').length === 1 ) {
-            if(calculations[0] === '-'){
+        if (calculations.split(' ').length === 1) {
+            if (calculations[0] === '-') {
                 setCalculations(calculations.slice(1,))
                 setCurrentCalculations(currentCalculations.slice(1,))
 
-            }else {
-                setCalculations('-'+calculations)
-                setCurrentCalculations('-'+currentCalculations)
+            } else {
+                setCalculations('-' + calculations)
+                setCurrentCalculations('-' + currentCalculations)
                 setHistory('-' + history)
             }
         } else {
-            if(calculations[0] === '-'){
+            if (calculations[0] === '-') {
                 setCalculations(calculations.slice(1,))
                 setCurrentCalculations(currentCalculations.slice(1,))
-                setHistory(history.slice(0, history.lastIndexOf(currentCalculations))+ history.slice(history.lastIndexOf(currentCalculations)+1))
+                setHistory(history.slice(0, history.lastIndexOf(currentCalculations)) + history.slice(history.lastIndexOf(currentCalculations) + 1))
 
-            }else {
-                setCalculations('-'+calculations)
-                setCurrentCalculations('-'+currentCalculations)
-                setHistory(history.slice(0, history.lastIndexOf(currentCalculations)) + '-'+ history.slice(history.lastIndexOf(currentCalculations), ))
+            } else {
+                setCalculations('-' + calculations)
+                setCurrentCalculations('-' + currentCalculations)
+                setHistory(history.slice(0, history.lastIndexOf(currentCalculations)) + '-' + history.slice(history.lastIndexOf(currentCalculations),))
             }
         }
     }
@@ -140,13 +140,14 @@ function App() {
         } else if (nums.includes(value)) {
             setHistory(history + value)
             setCalculations(calculations + value)
-            calculations.split(' ').length === 3
-                ? setCurrentCalculations(calculations.split(' ')[2] + value)
-                : setCurrentCalculations(currentCalculations + value)
-            if (history[history.length - 1] === '=') {
-                setHistory(currentCalculations)
-                setCurrentCalculations('')
-                setCurrentCalculations(currentCalculations+value)
+            if (history[history.length - 2] === '=') {
+                setHistory(value)
+                setCurrentCalculations(value)
+                setCalculations(value)
+            } else {
+                calculations.split(' ').length === 3
+                    ? setCurrentCalculations(calculations.split(' ')[2] + value)
+                    : setCurrentCalculations(currentCalculations + value)
             }
         } else if (calcSigns.includes(value)) {
             setHistory(history + ' ' + value + ' ')
@@ -161,7 +162,7 @@ function App() {
                 setHistory(currentCalculations + value)
             }
         } else if (value === '=') {
-            setHistory(history  + ' ' + value + ' ')
+            setHistory(history + ' ' + value + ' ')
             doCalcs(+firstOperand, +secondOperand, calculations.split(' ')[1],)
             setCurrentCalculations(`${doCalcs(firstOperand, secondOperand, calculations.split(' ')[1])}`)
             firstOperand = currentCalculations
